@@ -19,8 +19,8 @@
 
 const CRM_CONFIG = {
     // ═══ REEMPLAZAR ESTOS VALORES ═══
-    portalId: '51357778',
-    formGuid: '0d562004-d81b-44ca-8252-ee611a0844aa',
+    portalId: '51358404',
+    formGuid: 'deeae971-0785-429f-ac99-4c4ed8286d2a',
     enabled: true,
     // ═════════════════════════════════
 

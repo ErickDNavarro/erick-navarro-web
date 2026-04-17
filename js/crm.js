@@ -18,14 +18,20 @@
  */
 
 const CRM_CONFIG = {
-    // ═══ REEMPLAZAR ESTOS VALORES ═══
+    // ═══ HUBSPOT ═══
     portalId: '51358404',
     formGuid: 'deeae971-0785-429f-ac99-4c4ed8286d2a',
     enabled: true,
-    // ═════════════════════════════════
-
-    // HubSpot Forms API endpoint
     apiUrl: 'https://api.hsforms.com/submissions/v3/integration/submit',
+
+    // ═══ BREVO (Email Automation) ═══
+    // SETUP: Crear cuenta en https://app.brevo.com
+    // Ir a Settings > API Keys > Create API Key
+    brevo: {
+        apiKey: 'YOUR_BREVO_API_KEY',   // Reemplazar con tu API key de Brevo
+        listId: null,                     // ID de la lista donde agregar contactos (opcional)
+        enabled: false,                   // Cambiar a true después de configurar
+    },
 
     // Logging en consola para debug
     debug: true,
@@ -56,6 +62,11 @@ async function enviarLeadCRM(leadData) {
         }
         return { success: true, message: 'CRM deshabilitado (modo test)' };
     }
+
+    // Enviar a Brevo en paralelo (no bloquea el flujo principal)
+    enviarLeadBrevo(leadData).catch(err => {
+        if (CRM_CONFIG.debug) console.warn('[Brevo] Error no-crítico:', err);
+    });
 
     // Mapear campos al formato HubSpot
     const fields = [
@@ -102,6 +113,70 @@ async function enviarLeadCRM(leadData) {
         return { success: false, message: `Error ${response.status}` };
     } catch (error) {
         console.error('[CRM] Error de red:', error);
+        return { success: false, message: 'Error de conexión' };
+    }
+}
+
+/**
+ * Envía un contacto a Brevo para email automation.
+ * Brevo se encarga de las secuencias de bienvenida y nurturing.
+ */
+async function enviarLeadBrevo(leadData) {
+    if (!CRM_CONFIG.brevo.enabled || !CRM_CONFIG.brevo.apiKey || CRM_CONFIG.brevo.apiKey === 'YOUR_BREVO_API_KEY') {
+        if (CRM_CONFIG.debug) console.log('[Brevo] Deshabilitado. Contacto que se enviaría:', leadData.email);
+        return { success: true, message: 'Brevo deshabilitado (modo test)' };
+    }
+
+    // Mapear origen a tag para segmentar en Brevo
+    const origenToTag = {
+        'formulario_contacto': 'via-formulario',
+        'chatbot': 'via-chatbot',
+        'cal_com': 'via-calcom',
+    };
+
+    const payload = {
+        email: leadData.email,
+        attributes: {
+            FIRSTNAME: leadData.nombre || '',
+            COMPANY: leadData.empresa || '',
+            SERVICIO: leadData.servicio || '',
+            MENSAJE: leadData.mensaje || '',
+            ORIGEN: leadData.origen || 'web',
+        },
+        updateEnabled: true, // Actualiza si ya existe el contacto
+    };
+
+    // Agregar a lista específica si está configurada
+    if (CRM_CONFIG.brevo.listId) {
+        payload.listIds = [CRM_CONFIG.brevo.listId];
+    }
+
+    try {
+        const response = await fetch('https://api.brevo.com/v3/contacts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'api-key': CRM_CONFIG.brevo.apiKey,
+            },
+            body: JSON.stringify(payload),
+        });
+
+        if (response.ok || response.status === 201 || response.status === 204) {
+            if (CRM_CONFIG.debug) console.log('[Brevo] Contacto creado/actualizado:', leadData.email);
+            return { success: true, message: 'Contacto agregado a Brevo' };
+        }
+
+        const errorData = await response.json().catch(() => ({}));
+        // 409 = contacto ya existe (no es error si updateEnabled: true)
+        if (response.status === 409) {
+            if (CRM_CONFIG.debug) console.log('[Brevo] Contacto ya existía, actualizado:', leadData.email);
+            return { success: true, message: 'Contacto ya existía en Brevo' };
+        }
+
+        console.error('[Brevo] Error:', response.status, errorData);
+        return { success: false, message: `Error ${response.status}` };
+    } catch (error) {
+        console.error('[Brevo] Error de red:', error);
         return { success: false, message: 'Error de conexión' };
     }
 }

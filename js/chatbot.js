@@ -397,6 +397,10 @@ class ChatbotWidget {
         this.isOpen = false;
         this.isLoading = false;
         this.messageHistory = [];
+        // ═══ CRM Lead Capture State ═══
+        this.leadData = { nombre: '', email: '', servicio: '', mensaje: '', origen: 'chatbot' };
+        this.captureState = 'idle'; // idle | asking_contact | asking_name | asking_email | done
+        this.interactionCount = 0;
         this.init();
     }
 
@@ -561,8 +565,17 @@ class ChatbotWidget {
     async getResponse(userMessage) {
         this.sendBtn.disabled = true;
         this.showTyping();
+        this.interactionCount++;
 
         try {
+            // ═══ CRM: Check if we're in lead capture flow ═══
+            const captureResponse = this.handleLeadCapture(userMessage);
+            if (captureResponse) {
+                this.removeTyping();
+                this.addBotMessage(captureResponse);
+                return;
+            }
+
             let response;
 
             // Use API if configured, otherwise fallback to knowledge base
@@ -574,6 +587,14 @@ class ChatbotWidget {
 
             this.removeTyping();
             this.addBotMessage(response);
+
+            // ═══ CRM: After 3+ interactions, offer to capture lead ═══
+            if (this.interactionCount >= 3 && this.captureState === 'idle') {
+                this.captureState = 'asking_contact';
+                setTimeout(() => {
+                    this.addBotMessage("Por cierto, si querés que Erick te contacte directamente para charlar sobre tu caso, dejame tu nombre y email y él se comunica con vos. ¿Te interesa?");
+                }, 1500);
+            }
         } catch (error) {
             this.removeTyping();
             this.addBotMessage("Lo siento, hubo un error al procesar tu pregunta. Por favor, intenta de nuevo.");
@@ -581,6 +602,106 @@ class ChatbotWidget {
         } finally {
             this.sendBtn.disabled = false;
         }
+    }
+
+    /**
+     * Maneja el flujo de captura de leads paso a paso.
+     * Retorna un string si estamos en flujo de captura, null si no.
+     */
+    handleLeadCapture(userMessage) {
+        const lower = userMessage.toLowerCase().trim();
+
+        // Detectar si el usuario voluntariamente da su email en cualquier momento
+        if (this.captureState !== 'done' && window.CRM) {
+            const emailDetected = window.CRM.detectarEmail(userMessage);
+            if (emailDetected) {
+                this.leadData.email = emailDetected;
+                if (!this.leadData.nombre) {
+                    this.captureState = 'asking_name';
+                    return `¡Genial! Tomé nota de tu email (${emailDetected}). ¿Cómo te llamas para que Erick sepa con quién hablar?`;
+                } else {
+                    // Ya tenemos nombre y email, enviar lead
+                    this.captureState = 'done';
+                    this.submitLead();
+                    return `¡Perfecto, ${this.leadData.nombre}! Erick va a recibir tus datos y se va a comunicar con vos a la brevedad. Mientras tanto, podés seguir preguntándome lo que necesites.`;
+                }
+            }
+        }
+
+        switch (this.captureState) {
+            case 'asking_contact':
+                // User responds to "¿Te interesa?"
+                if (/sí|si|dale|bueno|claro|ok|vale|porfa|por favor|quiero|yes/.test(lower)) {
+                    this.captureState = 'asking_name';
+                    return '¡Genial! ¿Cómo te llamas?';
+                } else if (/no|ahora no|después|despues|luego/.test(lower)) {
+                    this.captureState = 'done'; // Don't ask again
+                    return 'Sin problema. Si en algún momento querés que Erick te contacte, solo decime. ¿En qué más puedo ayudarte?';
+                }
+                return null; // Not a clear yes/no, let normal flow handle it
+
+            case 'asking_name':
+                // Capture name
+                this.leadData.nombre = userMessage.trim();
+                // Detect service interest from conversation history
+                this.leadData.servicio = this.detectServiceFromHistory();
+                this.leadData.mensaje = this.getConversationSummary();
+                this.captureState = 'asking_email';
+                return `Mucho gusto, ${this.leadData.nombre}. ¿Cuál es tu email para que Erick te escriba?`;
+
+            case 'asking_email':
+                // Capture email
+                const email = window.CRM ? window.CRM.detectarEmail(userMessage) : userMessage.trim();
+                if (email) {
+                    this.leadData.email = email;
+                    this.captureState = 'done';
+                    this.submitLead();
+                    return `¡Listo, ${this.leadData.nombre}! Erick va a recibir tus datos y se va a comunicar con vos pronto. Mientras tanto, podés seguir preguntándome lo que necesites.`;
+                } else {
+                    return 'Hmm, no pude detectar un email válido. ¿Podrías escribirlo de nuevo? (ej: nombre@empresa.com)';
+                }
+
+            default:
+                return null; // Not in capture flow
+        }
+    }
+
+    /**
+     * Envía el lead capturado al CRM
+     */
+    submitLead() {
+        if (window.CRM) {
+            window.CRM.enviarLead(this.leadData).then(result => {
+                if (CRM_CONFIG?.debug || window.CRM?.config?.debug) {
+                    console.log('[Chatbot→CRM] Lead enviado:', result);
+                }
+            });
+        }
+    }
+
+    /**
+     * Detecta el servicio de interés basándose en el historial
+     */
+    detectServiceFromHistory() {
+        const history = this.messageHistory.map(m => m.content).join(' ').toLowerCase();
+        const services = this.config.knowledgeBase?.services || {};
+        for (const [key, service] of Object.entries(services)) {
+            if (service.keywords?.some(kw => history.includes(kw))) {
+                return service.title;
+            }
+        }
+        return 'Consulta general';
+    }
+
+    /**
+     * Resume la conversación para el campo mensaje del CRM
+     */
+    getConversationSummary() {
+        return this.messageHistory
+            .filter(m => m.role === 'user')
+            .map(m => m.content)
+            .slice(0, 5) // Máx 5 mensajes del usuario
+            .join(' | ');
     }
 
     async getAIResponse(userMessage) {

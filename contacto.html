@@ -408,6 +408,7 @@
     </script>
 
     <script src="js/analytics.js"></script>
+    <script src="js/crm.js"></script>
     <script src="js/main.js"></script>
     <script src="js/chatbot.js"></script>
 
@@ -474,25 +475,44 @@
     </script>
 
     <!-- ═══ HubSpot CRM Tracking ═══ -->
-    <!-- SETUP:
-     1. Create free account at https://app.hubspot.com/signup/crm
-     2. Go to Settings > Tracking & Analytics > Tracking Code
-     3. Copy your Hub ID and replace below
-     4. Also install the HubSpot form if you want leads auto-created in CRM
--->
-    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/YOUR_HUB_ID.js"></script>
+    <!-- SETUP: Reemplazar YOUR_HUB_ID con tu Hub ID de HubSpot
+         Settings > Tracking & Analytics > Tracking Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/51357778.js"></script>
 
+    <!-- ═══ CRM Lead Capture desde Formulario ═══ -->
     <script>
-        // ═══ HubSpot Lead Capture ═══
-        // This sends form data to HubSpot CRM automatically
-        // SETUP: Replace YOUR_PORTAL_ID and YOUR_FORM_GUID after creating a HubSpot form
-        // Go to Marketing > Forms > Create Form > get the portal ID and form GUID
-        const HUBSPOT_CONFIG = {
-            portalId: 'YOUR_PORTAL_ID',    // Replace with your HubSpot Portal ID
-            formGuid: 'YOUR_FORM_GUID',    // Replace with your HubSpot Form GUID
-            enabled: false,                  // Set to true after configuring
-        };
+        // Hook: después del envío exitoso de EmailJS, también crear lead en CRM
+        (function() {
+            const form = document.getElementById('contactForm');
+            if (!form) return;
 
-        // Hook into form submission to also send to HubSpot
-        if (HUBSPOT_CONFIG.enabled) {
-            const originalSubm
+            // Interceptar el submit DESPUÉS del handler de EmailJS
+            const originalHandler = form.onsubmit;
+            form.addEventListener('submit', function() {
+                // Esperar a que EmailJS termine (el botón cambia a "✓ Mensaje enviado")
+                const checkSent = setInterval(() => {
+                    const btn = form.querySelector('button[type="submit"]');
+                    if (btn && btn.textContent.includes('✓')) {
+                        clearInterval(checkSent);
+                        // Enviar lead al CRM
+                        if (window.CRM) {
+                            window.CRM.enviarLead({
+                                nombre: document.getElementById('nombre')?.value || '',
+                                email: document.getElementById('email')?.value || '',
+                                empresa: document.getElementById('empresa')?.value || '',
+                                servicio: document.getElementById('servicio')?.value || '',
+                                mensaje: document.getElementById('proyecto')?.value || '',
+                                origen: 'formulario_contacto',
+                            });
+                        }
+                    }
+                }, 500);
+                // Timeout: dejar de chequear después de 15s
+                setTimeout(() => clearInterval(checkSent), 15000);
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

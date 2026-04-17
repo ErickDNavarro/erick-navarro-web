@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <title>Automatización Inteligente con IA | Erick Navarro</title>
+    <meta name="description" content="Implementación de agentes IA, chatbots inteligentes, procesamiento automático de documentos y workflows. Reduce horas de trabajo manual con automatización inteligente.">
+    <meta name="theme-color" content="#ff4d00">
+    <link rel="canonical" href="https://ericknavarro.ai/automatizacion-ia">
+    <meta property="og:title" content="Automatización Inteligente con IA | Erick Navarro">
+    <meta property="og:description" content="Implementación de agentes IA, chatbots inteligentes, procesamiento automático de documentos y workflows. Reduce horas de trabajo manual con automatización inteligente.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ericknavarro.ai/automatizacion-ia">
+    <meta property="og:image" content="https://ericknavarro.ai/og-image.png">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:site_name" content="Erick Navarro - IA & Consulting">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Automatización Inteligente con IA | Erick Navarro">
+    <meta name="twitter:description" content="Implementación de agentes IA, chatbots inteligentes, procesamiento automático de documentos y workflows. Reduce horas de trabajo manual con automatización inteligente.">
+    <meta name="twitter:image" content="https://ericknavarro.ai/og-image.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Erick Navarro - IA & Consulting",
+        "description": "Automatización con IA para PYMEs y emprendedores. Sistemas que se pagan solos en semanas.",
+        "url": "https://ericknavarro.ai",
+        "email": "ericknavarroia@gmail.com",
+        "telephone": "+541155270357",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "AR"
+        },
+        "priceRange": "$$",
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "sameAs": ["https://www.linkedin.com/in/erickdavidnavarro"],
+        "serviceType": ["AI Automation", "Software Consulting", "Custom Development", "System Integration", "AI Training"],
+        "areaServed": {
+            "@type": "Country",
+            "name": "Argentina"
+        },
+        "founder": {
+            "@type": "Person",
+            "name": "Erick Navarro",
+            "jobTitle": "AI Automation Consultant"
+        }
+    }
+    </script>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<canvas id="particleCanvas"></canvas>
+<div class="noise"></div>
+
+<!-- Navigation -->
+<nav class="nav">
+    <a href="index.html" class="nav-logo">
+        <div class="icon">EN</div>
+        Erick Navarro
+    </a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="casos.html">Resultados</a></li>
+        <li><a href="sobre-mi.html">Sobre mí</a></li>
+        <li><a href="contacto.html" class="nav-cta magnetic-btn">Hablemos</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<!-- Hero Section -->
+<section class="page-hero">
+    <div class="breadcrumb">
+        <a href="index.html">Inicio</a>
+        <span>/</span>
+        <a href="servicios.html">Servicios</a>
+        <span>/</span>
+        <span>Automatización Inteligente</span>
+    </div>
+
+    <div class="hero-content">
+        <h1>
+            ¿Tu equipo pierde horas
+            <br>
+            <span class="accent-word">en tareas repetitivas?</span>
+        </h1>
+        <p class="hero-description">
+            Procesos que se automatizan solos. Mientras vos te enfocas en lo que importa, los flujos trabajan 24/7. Sin inversión gigante.
+        </p>
+        <a href="contacto.html" class="cta-btn magnetic-btn">Contame qué pasa</a>
+    </div>
+</section>
+
+<!-- Qué Automatizo Section -->
+<section class="content-section">
+    <div class="section-container">
+        <h2>¿Tenés alguno de estos problemas?</h2>
+        <p class="section-subtitle">Procesos que todavía hacés manualmente y que podrían funcionar solos</p>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="card-icon">✉️</div>
+                <h3>Procesamiento de Emails</h3>
+                <p>Lee, categoriza y responde emails automáticamente según reglas inteligentes.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-icon">📊</div>
+                <h3>Extracción de Datos</h3>
+                <p>Extrae información de documentos, PDFs y sitios web sin copiar y pegar.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-icon">🤖</div>
+                <h3>Chatbots Inteligentes</h3>
+                <p>Asistentes conversacionales que responden preguntas y resuelven consultas 24/7.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-icon">🏷️</div>
+                <h3>Clasificación Automática</h3>
+                <p>Clasifica y etiqueta contenido, clientes y tareas sin intervención manual.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-icon">📈</div>
+                <h3>Generación de Reportes</h3>
+                <p>Crea reportes, dashboards y resúmenes ejecutivos automáticamente cada día.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-icon">🔗</div>
+                <h3>Flujos Multi-Sistema</h3>
+                <p>Conecta tus herramientas favoritas para que trabajen juntas sin fricciones.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tecnologías Section -->
+<section class="content-section tech-section">
+    <div class="section-container">
+        <h2>Tecnologías que uso</h2>
+        <p class="section-subtitle">Stack moderno para automatización inteligente</p>
+
+        <div class="tech-pills">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">LangChain</span>
+            <span class="tech-tag">OpenAI</span>
+            <span class="tech-tag">Claude API</span>
+            <span class="tech-tag">n8n</span>
+            <span class="tech-tag">Zapier</span>
+            <span class="tech-tag">Make</span>
+        </div>
+    </div>
+</section>
+
+<!-- Cómo Funciona Section -->
+<section class="content-section">
+    <div class="section-container">
+        <h2>Cómo funciona</h2>
+        <p class="section-subtitle">Mi proceso paso a paso para implementar tu automatización</p>
+
+        <div class="step-cards">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Análisis de procesos</h3>
+                <p>Mapeamos los procesos actuales, identificamos cuellos de botella y oportunidades de automatización real.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Diseño del flujo</h3>
+                <p>Diseñamos la arquitectura del sistema: qué datos fluyen, dónde se almacenan y qué IA interviene.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Desarrollo e integración</h3>
+                <p>Construyo el sistema, lo integro con tus herramientas existentes y lo conecto a bases de datos.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3>Testing y optimización</h3>
+                <p>Probamos en escenarios reales, ajustamos parámetros y lo dejamos listo para producción.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner">
+    <div class="cta-content">
+        <img src="img/erick/erick-profile-md.webp" alt="Erick Navarro" width="80" height="80" loading="lazy" style="border-radius:50%;border:2px solid #ff4d00;margin-bottom:1rem;box-shadow:0 0 20px rgba(255,77,0,0.1);">
+        <h2>¿Necesitás que algo funcione automáticamente?</h2>
+        <p>Hablamos, miramos tu caso específico, y vemos si se puede resolver sin complicaciones.</p>
+        <a href="contacto.html" class="cta-btn magnetic-btn">¿Hablamos?</a>
+        <div class="contact-row">
+            <a href="mailto:ericknavarroia@gmail.com" class="contact-prominent">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+                ericknavarroia@gmail.com
+            </a>
+            <a href="https://wa.me/1155270357?text=Hola%20Erick%2C%20me%20interesa%20una%20consulta%20sobre%20automatizaci%C3%B3n" class="contact-prominent" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                +54 11 5527-0357
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-copy">© 2026 Erick Navarro · IA & Consulting</div>
+            <ul class="footer-links">
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="casos.html">Proceso</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="privacidad.html">Privacidad</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/1155270357?text=Hola%20Erick%2C%20me%20interesa%20una%20consulta%20sobre%

@@ -1,0 +1,261 @@
+/* ── Particle Canvas ── */
+        #particleCanvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            display: flex; align-items: center;
+            position: relative; overflow: hidden;
+            padding: 8rem 0 6rem;
+        }
+        .hero-content { position: relative; z-index: 2; }
+        .hero-bg-photo {
+            position: absolute;
+            right: -5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 55%;
+            max-width: 650px;
+            height: auto;
+            opacity: 0.12;
+            filter: grayscale(100%) contrast(1.1);
+            pointer-events: none;
+            z-index: 1;
+            mask-image: radial-gradient(ellipse 70% 70% at center, black 30%, transparent 75%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 70% at center, black 30%, transparent 75%);
+        }
+        @media (max-width: 768px) {
+            .hero-bg-photo {
+                width: 80%;
+                right: -15%;
+                opacity: 0.08;
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            font-family: var(--mono); font-size: 0.7rem;
+            color: var(--accent); letter-spacing: 0.1em;
+            margin-bottom: 2.5rem; opacity: 0;
+        }
+        .hero-badge .dot {
+            width: 6px; height: 6px;
+            background: var(--accent); border-radius: 50%;
+            animation: blink 2s ease-in-out infinite;
+        }
+        @keyframes blink {
+            0%,100% { opacity: 1; } 50% { opacity: 0.2; }
+        }
+
+        .hero h1 {
+            font-size: clamp(3.2rem, 8vw, 6.5rem);
+            font-weight: 900; letter-spacing: -0.05em;
+            line-height: 0.95; margin-bottom: 2rem;
+        }
+        .hero h1 .line { display: block; overflow: hidden; }
+        .hero h1 .line-inner {
+            display: block;
+            transform: translateY(110%);
+        }
+        .hero h1 .accent-word {
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem; color: var(--text2);
+            max-width: 480px; line-height: 1.7;
+            margin-bottom: 2.5rem; opacity: 0;
+        }
+
+        .hero-actions {
+            display: flex; gap: 1rem;
+            align-items: center; flex-wrap: wrap;
+            opacity: 0;
+        }
+
+        /* ── Contact Prominent (email/phone in hero + CTA) ── */
+        .hero-contact {
+            display: flex; gap: 1.5rem; flex-wrap: wrap;
+            margin-top: 1.5rem; opacity: 0;
+            animation: fadeInContact 0.8s 1.8s forwards;
+        }
+        @keyframes fadeInContact { to { opacity: 1; } }
+        .contact-prominent {
+            display: inline-flex; align-items: center; gap: 0.55rem;
+            font-size: 0.95rem; font-weight: 500;
+            color: #eaeaea; text-decoration: none;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid transparent;
+            transition: color 0.25s, border-color 0.25s;
+        }
+        .contact-prominent svg { color: var(--accent); flex-shrink: 0; }
+        .contact-prominent:hover {
+            color: #ffffff;
+            border-bottom-color: var(--accent);
+        }
+        .contact-prominent-lg { font-size: 1.05rem; font-weight: 600; }
+        .cta-contact-grid {
+            display: flex; gap: 2.5rem; justify-content: center; flex-wrap: wrap;
+            margin-top: 2rem; padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+        .services-cta {
+            display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+            margin-top: 3.5rem;
+        }
+
+        /* ── Mid-page CTA band ── */
+        .cta-mid {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, rgba(255,77,0,0.08), rgba(255,77,0,0.02));
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .cta-mid-inner {
+            display: flex; gap: 3rem; align-items: center; justify-content: space-between; flex-wrap: wrap;
+        }
+        .cta-mid-inner h3 {
+            font-size: 1.6rem; font-weight: 700;
+            letter-spacing: -0.02em; line-height: 1.2;
+            margin-bottom: 0.6rem;
+            max-width: 560px;
+        }
+        .cta-mid-inner p {
+            color: var(--text2); font-size: 0.95rem;
+            max-width: 560px;
+        }
+        .cta-mid-actions {
+            display: flex; gap: 1rem; flex-wrap: wrap;
+        }
+        @media (max-width: 768px) {
+            .cta-mid-inner { gap: 1.5rem; }
+            .cta-mid-actions { width: 100%; }
+            .cta-mid-actions .btn { flex: 1; justify-content: center; }
+        }
+
+        .btn-arrow {
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+        .btn:hover .btn-arrow { transform: translateX(4px); }
+
+        /* ── Hero Stats ── */
+        .hero-stats {
+            display: flex; gap: 4rem;
+            margin-top: 5rem; padding-top: 3rem;
+            border-top: 1px solid var(--border);
+            opacity: 0;
+        }
+        .stat-num {
+            font-size: 2.2rem; font-weight: 800;
+            letter-spacing: -0.03em;
+            font-family: var(--mono);
+        }
+        .stat-num span { color: var(--accent); }
+        .stat-label { font-size: 0.75rem; color: var(--text2); margin-top: 0.2rem; }
+
+        /* ── MARQUEE ── */
+        .marquee-section {
+            padding: 2.5rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+            position: relative; z-index: 1;
+        }
+        .marquee-wrap {
+            display: flex; width: max-content;
+            animation: scroll 40s linear infinite;
+        }
+        .marquee-item {
+            font-family: var(--mono); font-size: 0.8rem;
+            color: var(--text3); white-space: nowrap;
+            padding: 0 2rem;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .marquee-item .sep { color: var(--accent); font-size: 0.5rem; }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ── Scramble text placeholder ── */
+        .scramble { display: inline-block; }
+
+        /* ── Pricing Cards ── */
+        .pricing-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem; margin-top: 3rem;
+        }
+        .price-card {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: var(--r); padding: 2.2rem;
+            position: relative; display: flex; flex-direction: column;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .price-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+        .price-card.featured {
+            border-color: var(--accent);
+            background: linear-gradient(180deg, rgba(255,77,0,0.04), var(--card));
+        }
+        .price-card.featured::after {
+            content: 'Más flexible';
+            position: absolute; top: -12px; left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent); color: #fff;
+            padding: 0.3rem 0.9rem; border-radius: 99px;
+            font-family: var(--mono); font-size: 0.65rem;
+            font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.1em; white-space: nowrap;
+        }
+        .price-label {
+            font-family: var(--mono); font-size: 0.7rem;
+            color: var(--accent); text-transform: uppercase;
+            letter-spacing: 0.15em; margin-bottom: 0.8rem;
+        }
+        .price-name { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.6rem; letter-spacing: -0.02em; }
+        .price-desc { font-size: 0.85rem; color: var(--text2); line-height: 1.6; margin-bottom: 1.5rem; min-height: 3.2rem; }
+        .price-amount {
+            font-family: var(--mono); font-size: 2rem;
+            font-weight: 800; color: #fff;
+            letter-spacing: -0.02em; margin-bottom: 0.3rem;
+        }
+        .price-amount .unit { font-size: 0.85rem; color: var(--text2); font-weight: 400; }
+        .price-note { font-size: 0.75rem; color: var(--text3); margin-bottom: 1.8rem; }
+        .price-features { list-style: none; margin-bottom: 2rem; flex-grow: 1; }
+        .price-features li {
+            font-size: 0.85rem; color: var(--text); line-height: 1.5;
+            padding: 0.5rem 0 0.5rem 1.4rem; position: relative;
+            border-bottom: 1px solid var(--border);
+        }
+        .price-features li:last-child { border-bottom: none; }
+        .price-features li::before {
+            content: '✓'; position: absolute; left: 0;
+            color: var(--accent); font-weight: 700;
+        }
+        .price-cta {
+            display: block; text-align: center; padding: 0.9rem;
+            border-radius: 10px; font-weight: 600; font-size: 0.9rem;
+            transition: all 0.3s; text-decoration: none;
+        }
+        .price-card .price-cta {
+            background: rgba(255,255,255,0.04);
+            color: #fff; border: 1px solid rgba(255,255,255,0.28);
+        }
+        .price-card .price-cta:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.55); }
+        .price-card.featured .price-cta { background: var(--accent); color: #fff; border: 1px solid var(--accent); }
+        .price-card.featured .price-cta:hover { box-shadow: 0 0 30px var(--glow); }
+
+        @media (max-width: 900px) {
+            .pricing-grid { grid-template-columns: 1fr; }
+        }
+
+        

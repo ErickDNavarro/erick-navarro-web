@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <title>Casos de Éxito | Erick Navarro</title>
+    <meta name="description" content="Casos de éxito reales: empresas que automatizaron sus procesos con IA y los resultados que obtuvieron. Métricas, antes y después, testimonios.">
+    <meta name="theme-color" content="#ff4d00">
+    <link rel="canonical" href="https://ericknavarro.ai/casos">
+    <meta property="og:title" content="Casos de Éxito | Erick Navarro">
+    <meta property="og:description" content="Casos de éxito reales: empresas que automatizaron sus procesos con IA y los resultados que obtuvieron. Métricas, antes y después, testimonios.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ericknavarro.ai/casos">
+    <meta property="og:image" content="https://ericknavarro.ai/og-image.png">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:site_name" content="Erick Navarro - IA & Consulting">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Casos de Éxito | Erick Navarro">
+    <meta name="twitter:description" content="Casos de éxito reales: empresas que automatizaron sus procesos con IA y los resultados que obtuvieron. Métricas, antes y después, testimonios.">
+    <meta name="twitter:image" content="https://ericknavarro.ai/og-image.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Erick Navarro - IA & Consulting",
+        "description": "Automatización con IA para PYMEs y emprendedores. Sistemas que se pagan solos en semanas.",
+        "url": "https://ericknavarro.ai",
+        "email": "ericknavarroia@gmail.com",
+        "telephone": "+541155270357",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "AR"
+        },
+        "priceRange": "$$",
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "sameAs": ["https://www.linkedin.com/in/erickdavidnavarro"],
+        "serviceType": ["AI Automation", "Software Consulting", "Custom Development", "System Integration", "AI Training"],
+        "areaServed": {
+            "@type": "Country",
+            "name": "Argentina"
+        },
+        "founder": {
+            "@type": "Person",
+            "name": "Erick Navarro",
+            "jobTitle": "AI Automation Consultant"
+        }
+    }
+    </script>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<canvas id="particleCanvas"></canvas>
+<div class="noise"></div>
+
+<!-- Navigation -->
+<nav class="nav">
+    <a href="index.html" class="nav-logo">
+        <div class="icon">EN</div>
+        Erick Navarro
+    </a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="casos.html">Resultados</a></li>
+        <li><a href="sobre-mi.html">Sobre mí</a></li>
+        <li><a href="contacto.html" class="nav-cta magnetic-btn">Hablemos</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<!-- Page Hero -->
+<section class="page-hero">
+    <div class="container">
+        <h1 class="heading heading-xl">
+            Resultados reales.
+            <br>
+            No <span class="accent-word">promesas.</span>
+        </h1>
+        <p class="subtext">
+            Cada proyecto tiene números que lo respaldan. Estos son algunos de los resultados que mis clientes han logrado.
+        </p>
+    </div>
+</section>
+
+<!-- Case Studies -->
+<section class="content-section">
+    <div class="container">
+        <!-- Case Study 1: Logística -->
+        <article class="case-study-card">
+            <div class="case-study-header">
+                <h2 class="heading heading-lg">
+                    De 40h/semana a 2h en procesamiento de pedidos
+                </h2>
+                <div class="tags">
+                    <span class="tag">Logística</span>
+                    <span class="tag">Empresa de logística, 50 empleados</span>
+                </div>
+            </div>
+
+            <div class="case-study-grid">
+                <div class="case-study-block">
+                    <h3 class="label">Problema</h3>
+                    <ul class="problem-list">
+                        <li>5 personas en data entry</li>
+                        <li>Errores del 12%</li>
+                        <li>Clientes esperando 48h por confirmación</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-block">
+                    <h3 class="label">Solución</h3>
+                    <p>IA que lee emails, extrae datos automáticamente al ERP y valida cada campo en tiempo real.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h3 class="label">Resultados</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-metric">-95%</div>
+                            <div class="result-label">Tiempo procesamiento</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-metric">$4,200</div>
+                            <div class="result-label">Ahorro mensual</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-metric">0.1%</div>
+                            <div class="result-label">Tasa de error</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-metric">3 semanas</div>
+                            <div class="result-label">Implementación</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study-tech">
+                <span class="label">Tech Stack</span>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">OpenAI</span>
+                    <span class="tag">n8n</span>
+                    <span class="tag">PostgreSQL</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- Case Study 2: E-commerce -->
+        <article class="case-study-card">
+            <div class="case-study-header">
+                <h2 class="heading heading-lg">
+                    Chatbot que resuelve el 70% de consultas sin humanos
+                </h2>
+                <div class="tags">
+                    <span class="tag">Retail Online</span>
+                    <span class="tag">20 empleados</span>
+                </div>
+            </div>
+
+            <div class="case-study-grid">
+                <div class="case-study-block">
+                    <h3 class="label">Problema</h3>
+                    <ul class="problem-list">
+                        <li>Equipo de soporte saturado</li>
+                        <li>200+ tickets por día</li>
+                        <li>Tiempo de respuesta 4 horas</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-block">
+                    <h3 class="label">Solución</h3>
+                    <p>Chatbot con IA entrenado con base de conocimiento propia, escalación inteligente a humanos cuando es necesario.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h3 class="label">Resultados</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-metric">70%</div>
+                            <div class="result-label">Consultas automáticas</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-metric">&lt;30s</div>
+                            <div class="result-label">Tiempo respuesta</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-metric">+25%</div>
+                            <div class="result-label">Satisfacción cliente</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-metric">2 personas</div>
+                            <div class="result-label">Liberadas para strategy</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study-tech">
+                <span class="label">Tech Stack</span>
+                <div class="tags">
+                    <span class="tag">Claude API</span>
+                    <span class="tag">LangChain</span>
+                    <span class="tag">Next.js</span>
+                    <span class="tag">Webhooks</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- Case Study 3: Servicios Profesionales -->
+        <article class="case-study-card">
+            <div class="case-study-header">
+                <h2 class="heading heading-lg">
+                    Facturación automática que eliminó $8K/mes en errores
+                </h2>
+                <div class="tags">
+                    <span class="tag">Servicios Profesionales</span>
+                    <span class="tag">30 empleados</span>
+                </div>
+            </div>
+
+            <div class="case-study-grid">
+                <div class="case-study-block">
+                    <h3 class="label">Problema</h3>
+                    <ul class="problem-list">
+                        <li>Facturación manual</li>
+                        <li>Errores frecuentes</li>
+                        <li>20h/semana en reconciliación</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-block">
+                    <h3 class="label">Solución</h3>
+                    <p>Sistema que genera facturas automáticamente desde timesheet, valida contra contratos y envía por email.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h3 class="label">Resultados</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-metric">0</div>
+                            <div class="result-label">Errores en facturas</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-metric">$8K</div>
+                            <div class="result-label">Recuperados/mes</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-metric">20h → 1h</div>
+                            <div class="result-label">Tiempo/semana</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-metric">6 semanas</div>
+                            <div class="result-label">ROI</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study-tech">
+                <span class="label">Tech Stack</span>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Zapier</span>
+                    <span class="tag">Sheets API</span>
+                    <span class="tag">SMTP</span>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- Testimonios reales -->
+<section class="content-section alt">
+    <div class="container">
+        <h2 class="heading heading-md" style="text-align: center; margin-bottom: 3rem;">
+            Lo que dicen quienes trabajaron conmigo
+        </h2>
+        <div class="test-grid" style="grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 800px; margin: 0 auto;">
+            <!-- TESTIMONIO 1 -->
+            <div class="test-card" style="text-align:left;">
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;">
+                    <img src="img/testimonios/cliente-1.webp"
+                         alt="[NOMBRE CLIENTE 1]"
+                         width="56" height="56"
+                         style="border-radius:50%;object-fit:cover;border:2px solid var(--accent);"
+                         loading="lazy">
+                    <div>
+                        <h4 style="font-size:1rem;font-weight:700;margin:0;">[NOMBRE COMPLETO]</h4>
+                        <p style="font-size:0.85rem;color:var(--text2);margin:0;">[Cargo] · [Empresa]</p>
+                    </div>
+                </div>
+                <p style="font-size:0.95rem;color:var(--text2);line-height:1.7;font-style:italic;">
+                    "[QUOTE TEXTUAL]"
+                </p>
+                <img src="img/testimonios/logo-1.webp" alt="Logo [Empresa]" height="28"
+                     style="margin-top:1rem;opacity:0.6;filter:brightness(0) invert(1);" loading="lazy">
+            </div>
+            <!-- TESTIMONIO 2 -->
+            <div class="test-card" style="text-align:left;">
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;">
+                    <img src="img/testimonios/cliente-2.webp"
+                         alt="[NOMBRE CLIENTE 2]"
+                         width="56" height="56"
+                         style="border-radius:50%;object-fit:cover;border:2px solid var(--accent);"
+                         loading="lazy">
+                    <div>
+                        <h4 style="font-size:1rem;font-weight:700;margin:0;">[NOMBRE COMPLETO]</h4>
+                        <p style="font-size:0.85rem;color:var(--text2);margin:0;">[Cargo] · [Empresa]</p>
+                    </div>
+                </div>
+                <p style="font-size:0.95rem;color:var(--text2);line-height:1.7;font-style:italic;">
+                    "[QUOTE TEXTUAL]"
+                </p>
+                <img src="img/testimonios/logo-2.webp" alt="Logo [Empresa]" height="28"
+                     style="margin-top:1rem;opacity:0.6;filter:brightness(0) invert(1);" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner">
+    <div class="container">
+        <img src="img/erick/erick-profile-md.webp" alt="Erick Navarro" width="80" height="80" loading="lazy" style="border-radius:50%;border:2px solid #ff4d00;margin-bottom:1rem;box-shadow:0 0 20px rgba(255,77,0,0.1);">
+        <h2 class="heading heading-md">¿Cuál es tu siguiente caso de éxito?</h2>
+        <p class="subtext">
+            Contacta para una consulta gratuita. Te diré exactamente cómo puedo ayudarte y qué te ahorrarías.
+        </p>
+        <a href="contacto.html" class="btn btn-fill">Iniciar consulta →</a>
+        <div class="contact-row-cta">
+            <a href="mailto:ericknavarroia@gmail.com" class="contact-prominent contact-prominent-lg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+                ericknavarroia@gmail.com
+            </a>
+            <a href="tel:+541155270357" class="contact-prominent contact-prominent-lg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                +54 11 5527-0357
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-copy">© 2026 Erick Navarro · IA & Consulting</div>
+            <ul class="footer-links">
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="casos.html">Proceso</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="privacidad.html">Privacidad</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- WhatsA

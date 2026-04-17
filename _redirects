@@ -1,0 +1,15 @@
+# Remove .html extensions for clean URLs
+/servicios /servicios.html 200
+/automatizacion-ia /automatizacion-ia.html 200
+/desarrollo /desarrollo.html 200
+/consultoria /consultoria.html 200
+/integracion /integracion.html 200
+/formacion /formacion.html 200
+/casos /casos.html 200
+/sobre-mi /sobre-mi.html 200
+/contacto /contacto.html 200
+
+# Common redirects
+/services /servicios.html 301
+/contact /contacto.html 301
+/about /sobre-mi.html 301

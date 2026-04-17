@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <title>Integración de Sistemas | Erick Navarro</title>
+    <meta name="description" content="Integración de sistemas empresariales: conecta tu ERP, CRM, bases de datos y APIs legacy. Elimina la entrada manual de datos entre plataformas.">
+    <meta name="theme-color" content="#ff4d00">
+    <link rel="canonical" href="https://ericknavarro.ai/integracion">
+    <meta property="og:title" content="Integración de Sistemas | Erick Navarro">
+    <meta property="og:description" content="Integración de sistemas empresariales: conecta tu ERP, CRM, bases de datos y APIs legacy. Elimina la entrada manual de datos entre plataformas.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ericknavarro.ai/integracion">
+    <meta property="og:image" content="https://ericknavarro.ai/og-image.png">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:site_name" content="Erick Navarro - IA & Consulting">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Integración de Sistemas | Erick Navarro">
+    <meta name="twitter:description" content="Integración de sistemas empresariales: conecta tu ERP, CRM, bases de datos y APIs legacy. Elimina la entrada manual de datos entre plataformas.">
+    <meta name="twitter:image" content="https://ericknavarro.ai/og-image.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Erick Navarro - IA & Consulting",
+        "description": "Automatización con IA para PYMEs y emprendedores. Sistemas que se pagan solos en semanas.",
+        "url": "https://ericknavarro.ai",
+        "email": "ericknavarroia@gmail.com",
+        "telephone": "+541155270357",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "AR"
+        },
+        "priceRange": "$$",
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "sameAs": ["https://www.linkedin.com/in/erickdavidnavarro"],
+        "serviceType": ["AI Automation", "Software Consulting", "Custom Development", "System Integration", "AI Training"],
+        "areaServed": {
+            "@type": "Country",
+            "name": "Argentina"
+        },
+        "founder": {
+            "@type": "Person",
+            "name": "Erick Navarro",
+            "jobTitle": "AI Automation Consultant"
+        }
+    }
+    </script>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<canvas id="particleCanvas"></canvas>
+<div class="noise"></div>
+
+<!-- Navigation -->
+<nav class="nav">
+    <a href="index.html" class="nav-logo">
+        <div class="icon">EN</div>
+        Erick Navarro
+    </a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="casos.html">Resultados</a></li>
+        <li><a href="sobre-mi.html">Sobre mí</a></li>
+        <li><a href="contacto.html" class="nav-cta magnetic-btn">Hablemos</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<!-- Hero Section -->
+<section class="page-hero">
+    <div class="breadcrumb">
+        <a href="index.html">Inicio</a>
+        <span>/</span>
+        <a href="servicios.html">Servicios</a>
+        <span>/</span>
+        <span>Integración de Sistemas</span>
+    </div>
+
+    <div class="hero-content">
+        <h1>
+            ¿Pasás horas copiando datos
+            <br>
+            <span class="accent-word">de un sistema a otro?</span>
+        </h1>
+        <p class="hero-description">
+            Que los datos fluyan solos. CRM, ERP, email, bases de datos conectados automáticamente. Sin copiar manualmente, sin errores.
+        </p>
+        <a href="contacto.html" class="cta-btn magnetic-btn">¿Hablamos?</a>
+    </div>
+</section>
+
+<!-- Qué Integro Section -->
+<section class="content-section">
+    <div class="section-container">
+        <h2>¿Cuál es tu problema?</h2>
+        <p class="section-subtitle">Conexiones que hacen que todo funcione junto, sin complicaciones</p>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="card-icon">🔗</div>
+                <h3>CRM ↔ ERP</h3>
+                <p>Sincroniza clientes, órdenes y datos de ventas entre tu CRM y ERP automáticamente.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-icon">📧</div>
+                <h3>Email ↔ Base de Datos</h3>
+                <p>Extrae información de emails y guárdala automáticamente en tu base de datos.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-icon">💳</div>
+                <h3>Facturación Automática</h3>
+                <p>Crea facturas automáticamente desde órdenes, pedidos o movimientos en tu sistema.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-icon">📦</div>
+                <h3>Sincronización de Inventario</h3>
+                <p>Mantén el stock actualizado en tiempo real entre almacén, tienda y plataforma.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-icon">⚡</div>
+                <h3>Webhooks en Tiempo Real</h3>
+                <p>Eventos instantáneos: cuando algo sucede en un sistema, dispara acciones en otro.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-icon">🔌</div>
+                <h3>APIs Personalizadas</h3>
+                <p>Construyo endpoints custom para conectar sistemas legacy o cerrados.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Plataformas Section -->
+<section class="content-section tech-section">
+    <div class="section-container">
+        <h2>Plataformas que integro</h2>
+        <p class="section-subtitle">Experiencia con herramientas empresariales y modernas</p>
+
+        <div class="tech-pills">
+            <span class="tech-tag">Salesforce</span>
+            <span class="tech-tag">HubSpot</span>
+            <span class="tech-tag">SAP</span>
+            <span class="tech-tag">Odoo</span>
+            <span class="tech-tag">Google Sheets</span>
+            <span class="tech-tag">Slack</span>
+            <span class="tech-tag">Microsoft Teams</span>
+        </div>
+    </div>
+</section>
+
+<!-- Proceso Section -->
+<section class="content-section">
+    <div class="section-container">
+        <h2>Mi proceso de integración</h2>
+        <p class="section-subtitle">Cómo conecto tus sistemas de forma segura y escalable</p>
+
+        <div class="step-cards">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Auditoría de Stack</h3>
+                <p>Mapeo todas tus herramientas, cómo se comunican hoy y dónde hay silos de información.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Diseño de Arquitectura</h3>
+                <p>Defino flujos de datos: qué información va de A a B, cuándo, cómo y en qué formato.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Conexión y Testing</h3>
+                <p>Desarrollo la integración, la pruebo con datos reales y validamos cada escenario.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3>Monitoreo</h3>
+                <p>Monitoreamos la integración en producción, alertas ante fallos y soporte continuo.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner">
+    <div class="cta-content">
+        <img src="img/erick/erick-profile-md.webp" alt="Erick Navarro" width="80" height="80" loading="lazy" style="border-radius:50%;border:2px solid #ff4d00;margin-bottom:1rem;box-shadow:0 0 20px rgba(255,77,0,0.1);">
+        <h2>¿Tenés sistemas que deberían hablar entre sí?</h2>
+        <p>Contame cuáles son, y vemos cómo conectarlos para que funcionen juntos.</p>
+        <a href="contacto.html" class="cta-btn magnetic-btn">Contame</a>
+        <div class="contact-row">
+            <a href="mailto:ericknavarroia@gmail.com" class="contact-prominent">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+                ericknavarroia@gmail.com
+            </a>
+            <a href="https://wa.me/1155270357?text=Hola%20Erick%2C%20me%20interesa%20una%20consulta%20sobre%20automatizaci%C3%B3n" class="contact-prominent" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                +54 11 5527-0357
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-copy">© 2026 Erick Navarro · IA & Consulting</div>
+            <ul class="footer-links">
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="casos.html">Proceso</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="privacidad.html">Privacidad</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/1155270357?text=Hola%20Erick%2C%20me%20interesa%20una%20consulta%20sobre%

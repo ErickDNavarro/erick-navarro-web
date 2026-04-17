@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ericknavarro.ai/sitemap.xml
+
+# Block non-content files
+Disallow: /chatbot-worker/
+Disallow: /.claude/
+Disallow: /CHATBOT_SETUP.md
+Disallow: /SETUP_GUIDE.md
+Disallow: /audit-report.json

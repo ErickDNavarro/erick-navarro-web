@@ -617,3 +617,6 @@
             .steps-inline { grid-template-columns: 1fr; }
             .pricing-grid { grid-template-columns: 1fr; }
         }
+/* Testimonios */
+.test-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+@media (max-width: 768px) { .test-grid { grid-template-columns: 1fr; } }

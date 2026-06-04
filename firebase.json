@@ -9,7 +9,8 @@
       "node_modules/**",
       "*.md",
       "audit-report.json",
-      ".gitignore"
+      ".gitignore",
+      "flyer-*.png"
     ],
     "cleanUrls": true,
     "trailingSlash": false,

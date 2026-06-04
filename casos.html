@@ -9,55 +9,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
-    <title>Casos de Éxito | Erick Navarro</title>
-    <meta name="description" content="Casos de éxito reales: empresas que automatizaron sus procesos con IA y los resultados que obtuvieron. Métricas, antes y después, testimonios.">
+    <title>Soluciones | Erick Navarro</title>
+    <meta name="description" content="3 soluciones de automatización con IA que podés probar en vivo: chatbot 24/7, agenda inteligente y extracción de facturas.">
     <meta name="theme-color" content="#ff4d00">
     <link rel="canonical" href="https://ericknavarro.ai/casos">
-    <meta property="og:title" content="Casos de Éxito | Erick Navarro">
-    <meta property="og:description" content="Casos de éxito reales: empresas que automatizaron sus procesos con IA y los resultados que obtuvieron. Métricas, antes y después, testimonios.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ericknavarro.ai/casos">
-    <meta property="og:image" content="https://ericknavarro.ai/og-image.png">
-    <meta property="og:locale" content="es_AR">
-    <meta property="og:site_name" content="Erick Navarro - IA & Consulting">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Casos de Éxito | Erick Navarro">
-    <meta name="twitter:description" content="Casos de éxito reales: empresas que automatizaron sus procesos con IA y los resultados que obtuvieron. Métricas, antes y después, testimonios.">
-    <meta name="twitter:image" content="https://ericknavarro.ai/og-image.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Erick Navarro - IA & Consulting",
-        "description": "Automatización con IA para PYMEs y emprendedores. Sistemas que se pagan solos en semanas.",
-        "url": "https://ericknavarro.ai",
-        "email": "ericknavarroia@gmail.com",
-        "telephone": "+541155270357",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "AR"
-        },
-        "priceRange": "$$",
-        "openingHours": "Mo-Fr 09:00-18:00",
-        "sameAs": ["https://www.linkedin.com/in/erickdavidnavarro"],
-        "serviceType": ["AI Automation", "Software Consulting", "Custom Development", "System Integration", "AI Training"],
-        "areaServed": {
-            "@type": "Country",
-            "name": "Argentina"
-        },
-        "founder": {
-            "@type": "Person",
-            "name": "Erick Navarro",
-            "jobTitle": "AI Automation Consultant"
-        }
-    }
-    </script>
+    <link rel="stylesheet" href="css/soluciones.css">
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -66,7 +28,6 @@
 <canvas id="particleCanvas"></canvas>
 <div class="noise"></div>
 
-<!-- Navigation -->
 <nav class="nav">
     <a href="index.html" class="nav-logo">
         <div class="icon">EN</div>
@@ -74,7 +35,7 @@
     </a>
     <ul class="nav-links" id="navLinks">
         <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="casos.html">Resultados</a></li>
+        <li><a href="casos.html">Soluciones</a></li>
         <li><a href="sobre-mi.html">Sobre mí</a></li>
         <li><a href="contacto.html" class="nav-cta magnetic-btn">Hablemos</a></li>
     </ul>
@@ -83,266 +44,230 @@
     </button>
 </nav>
 
-<!-- Page Hero -->
 <section class="page-hero">
     <div class="container">
         <h1 class="heading heading-xl">
-            Resultados reales.
+            Soluciones que construyo.
             <br>
-            No <span class="accent-word">promesas.</span>
+            <span class="accent-word">Demostradas en vivo.</span>
         </h1>
         <p class="subtext">
-            Cada proyecto tiene números que lo respaldan. Estos son algunos de los resultados que mis clientes han logrado.
+            3 automatizaciones reales que ya implementé y podés probar acá mismo. Sin maquetas, sin promesas: el sistema que verías en tu negocio.
         </p>
     </div>
 </section>
 
-<!-- Case Studies -->
-<section class="content-section">
-    <div class="container">
-        <!-- Case Study 1: Logística -->
-        <article class="case-study-card">
-            <div class="case-study-header">
-                <h2 class="heading heading-lg">
-                    De 40h/semana a 2h en procesamiento de pedidos
-                </h2>
-                <div class="tags">
-                    <span class="tag">Logística</span>
-                    <span class="tag">Empresa de logística, 50 empleados</span>
-                </div>
-            </div>
-
-            <div class="case-study-grid">
-                <div class="case-study-block">
-                    <h3 class="label">Problema</h3>
-                    <ul class="problem-list">
-                        <li>5 personas en data entry</li>
-                        <li>Errores del 12%</li>
-                        <li>Clientes esperando 48h por confirmación</li>
-                    </ul>
-                </div>
-
-                <div class="case-study-block">
-                    <h3 class="label">Solución</h3>
-                    <p>IA que lee emails, extrae datos automáticamente al ERP y valida cada campo en tiempo real.</p>
-                </div>
-
-                <div class="case-study-block">
-                    <h3 class="label">Resultados</h3>
-                    <div class="results-grid">
-                        <div class="result-item">
-                            <div class="result-metric">-95%</div>
-                            <div class="result-label">Tiempo procesamiento</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-metric">$4,200</div>
-                            <div class="result-label">Ahorro mensual</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-metric">0.1%</div>
-                            <div class="result-label">Tasa de error</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-metric">3 semanas</div>
-                            <div class="result-label">Implementación</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="case-study-tech">
-                <span class="label">Tech Stack</span>
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">OpenAI</span>
-                    <span class="tag">n8n</span>
-                    <span class="tag">PostgreSQL</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- Case Study 2: E-commerce -->
-        <article class="case-study-card">
-            <div class="case-study-header">
-                <h2 class="heading heading-lg">
-                    Chatbot que resuelve el 70% de consultas sin humanos
-                </h2>
-                <div class="tags">
-                    <span class="tag">Retail Online</span>
-                    <span class="tag">20 empleados</span>
-                </div>
-            </div>
-
-            <div class="case-study-grid">
-                <div class="case-study-block">
-                    <h3 class="label">Problema</h3>
-                    <ul class="problem-list">
-                        <li>Equipo de soporte saturado</li>
-                        <li>200+ tickets por día</li>
-                        <li>Tiempo de respuesta 4 horas</li>
-                    </ul>
-                </div>
-
-                <div class="case-study-block">
-                    <h3 class="label">Solución</h3>
-                    <p>Chatbot con IA entrenado con base de conocimiento propia, escalación inteligente a humanos cuando es necesario.</p>
-                </div>
-
-                <div class="case-study-block">
-                    <h3 class="label">Resultados</h3>
-                    <div class="results-grid">
-                        <div class="result-item">
-                            <div class="result-metric">70%</div>
-                            <div class="result-label">Consultas automáticas</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-metric">&lt;30s</div>
-                            <div class="result-label">Tiempo respuesta</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-metric">+25%</div>
-                            <div class="result-label">Satisfacción cliente</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-metric">2 personas</div>
-                            <div class="result-label">Liberadas para strategy</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="case-study-tech">
-                <span class="label">Tech Stack</span>
-                <div class="tags">
-                    <span class="tag">Claude API</span>
-                    <span class="tag">LangChain</span>
-                    <span class="tag">Next.js</span>
-                    <span class="tag">Webhooks</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- Case Study 3: Servicios Profesionales -->
-        <article class="case-study-card">
-            <div class="case-study-header">
-                <h2 class="heading heading-lg">
-                    Facturación automática que eliminó $8K/mes en errores
-                </h2>
-                <div class="tags">
-                    <span class="tag">Servicios Profesionales</span>
-                    <span class="tag">30 empleados</span>
-                </div>
-            </div>
-
-            <div class="case-study-grid">
-                <div class="case-study-block">
-                    <h3 class="label">Problema</h3>
-                    <ul class="problem-list">
-                        <li>Facturación manual</li>
-                        <li>Errores frecuentes</li>
-                        <li>20h/semana en reconciliación</li>
-                    </ul>
-                </div>
-
-                <div class="case-study-block">
-                    <h3 class="label">Solución</h3>
-                    <p>Sistema que genera facturas automáticamente desde timesheet, valida contra contratos y envía por email.</p>
-                </div>
-
-                <div class="case-study-block">
-                    <h3 class="label">Resultados</h3>
-                    <div class="results-grid">
-                        <div class="result-item">
-                            <div class="result-metric">0</div>
-                            <div class="result-label">Errores en facturas</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-metric">$8K</div>
-                            <div class="result-label">Recuperados/mes</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-metric">20h → 1h</div>
-                            <div class="result-label">Tiempo/semana</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-metric">6 semanas</div>
-                            <div class="result-label">ROI</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="case-study-tech">
-                <span class="label">Tech Stack</span>
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Zapier</span>
-                    <span class="tag">Sheets API</span>
-                    <span class="tag">SMTP</span>
-                </div>
-            </div>
-        </article>
-    </div>
-</section>
-
-<!-- Testimonios reales -->
-<section class="content-section alt">
-    <div class="container">
-        <h2 class="heading heading-md" style="text-align: center; margin-bottom: 3rem;">
-            Lo que dicen quienes trabajaron conmigo
-        </h2>
-        <div class="test-grid" style="max-width: 800px; margin: 0 auto;">
-            <!-- TESTIMONIO 1 -->
-            <div class="test-card" style="text-align:left;">
-                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;">
-                    <img src="img/testimonios/cliente-1.webp"
-                         alt="[NOMBRE CLIENTE 1]"
-                         width="56" height="56"
-                         style="border-radius:50%;object-fit:cover;border:2px solid var(--accent);"
-                         loading="lazy">
-                    <div>
-                        <h4 style="font-size:1rem;font-weight:700;margin:0;">[NOMBRE COMPLETO]</h4>
-                        <p style="font-size:0.85rem;color:var(--text2);margin:0;">[Cargo] · [Empresa]</p>
-                    </div>
-                </div>
-                <p style="font-size:0.95rem;color:var(--text2);line-height:1.7;font-style:italic;">
-                    "[QUOTE TEXTUAL]"
-                </p>
-                <img src="img/testimonios/logo-1.webp" alt="Logo [Empresa]" height="28"
-                     style="margin-top:1rem;opacity:0.6;filter:brightness(0) invert(1);" loading="lazy">
-            </div>
-            <!-- TESTIMONIO 2 -->
-            <div class="test-card" style="text-align:left;">
-                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;">
-                    <img src="img/testimonios/cliente-2.webp"
-                         alt="[NOMBRE CLIENTE 2]"
-                         width="56" height="56"
-                         style="border-radius:50%;object-fit:cover;border:2px solid var(--accent);"
-                         loading="lazy">
-                    <div>
-                        <h4 style="font-size:1rem;font-weight:700;margin:0;">[NOMBRE COMPLETO]</h4>
-                        <p style="font-size:0.85rem;color:var(--text2);margin:0;">[Cargo] · [Empresa]</p>
-                    </div>
-                </div>
-                <p style="font-size:0.95rem;color:var(--text2);line-height:1.7;font-style:italic;">
-                    "[QUOTE TEXTUAL]"
-                </p>
-                <img src="img/testimonios/logo-2.webp" alt="Logo [Empresa]" height="28"
-                     style="margin-top:1rem;opacity:0.6;filter:brightness(0) invert(1);" loading="lazy">
-            </div>
+<section class="content-section" style="padding-top:0;">
+    <div class="container" style="max-width: 880px;">
+        <div class="honesty-banner">
+            <div class="icon">⚡</div>
+            <p>
+                <strong>Por qué no ves nombres de clientes ni testimonios inflados:</strong> recién estoy empezando a publicar en redes y prefiero que pruebes la solución antes de creerme. Los números que ves son <strong>rangos esperables</strong> basados en benchmarks de industria — los tuyos dependen de tu operación.
+            </p>
         </div>
+
+        <article class="solution-card" id="chatbot-leads">
+            <div class="solution-number">Solución 01</div>
+            <h2 class="solution-title">Chatbot 24/7 que captura leads mientras dormís</h2>
+            <div class="solution-tags">
+                <span class="tag">WhatsApp + Web</span>
+                <span class="tag">PyMEs / Servicios</span>
+                <span class="tag">Inmobiliarias · Clínicas · Cursos</span>
+            </div>
+            <div class="solution-grid">
+                <div class="solution-block">
+                    <h3>El problema</h3>
+                    <ul>
+                        <li>Consultas entran fuera de horario y nadie responde</li>
+                        <li>Cuando contestás al día siguiente, el lead ya compró en otro lado</li>
+                        <li>El equipo pierde tiempo respondiendo lo mismo 50 veces</li>
+                    </ul>
+                    <p class="industry-stat">El 78% de los consumidores compra al primero que responde. Después de 1h, las chances caen a la mitad. <em>Fuente: Harvard Business Review.</em></p>
+                </div>
+                <div class="solution-block">
+                    <h3>Cómo lo resuelvo</h3>
+                    <ul>
+                        <li>Bot entrenado con tu información (servicios, precios, FAQ)</li>
+                        <li>Atiende WhatsApp Business + chat en tu web 24/7</li>
+                        <li>Califica al lead y lo manda al CRM con contexto</li>
+                        <li>Escala a humano cuando detecta intención de compra alta</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="demo-box">
+                <span class="demo-label">PROBALO AHORA</span>
+                <p style="font-size: 0.9rem; color: var(--text2); margin-bottom: 0.5rem;">
+                    El chatbot abajo a la derecha <strong>es exactamente este sistema funcionando</strong>. Preguntale lo que quieras sobre mis servicios.
+                </p>
+                <div class="demo-actions">
+                    <button class="demo-btn" onclick="document.querySelector('.chatbot-bubble,.chat-toggle')?.click();">💬 Abrir el chatbot</button>
+                    <a class="demo-btn secondary" href="https://wa.me/1155270357?text=Hola%2C%20vi%20la%20demo%20del%20chatbot%20y%20quiero%20uno%20para%20mi%20negocio" target="_blank" rel="noopener">Versión WhatsApp</a>
+                </div>
+            </div>
+            <div class="expected-results">
+                <div class="er-item"><div class="er-metric">&lt;30s</div><div class="er-label">Tiempo de respuesta</div></div>
+                <div class="er-item"><div class="er-metric">24/7</div><div class="er-label">Cobertura</div></div>
+                <div class="er-item"><div class="er-metric">60-80%</div><div class="er-label">Consultas sin humano</div></div>
+                <div class="er-item"><div class="er-metric">2-3 sem</div><div class="er-label">Implementación</div></div>
+                <div class="er-note">* Rangos esperables según benchmarks de la industria.</div>
+            </div>
+            <div class="solution-stack">
+                <span class="stack-label">Stack</span>
+                <span class="tag">WhatsApp Cloud API</span>
+                <span class="tag">OpenAI / Claude</span>
+                <span class="tag">n8n</span>
+                <span class="tag">Cloudflare Workers</span>
+                <span class="tag">Tu CRM</span>
+            </div>
+        </article>
+
+        <article class="solution-card" id="agenda-turnos">
+            <div class="solution-number">Solución 02</div>
+            <h2 class="solution-title">Agenda de turnos 24/7 con confirmación + recordatorio inteligente</h2>
+            <div class="solution-tags">
+                <span class="tag">Profesionales</span>
+                <span class="tag">Locales de servicio</span>
+                <span class="tag">Médicos · Estéticas · Talleres · Coaches</span>
+            </div>
+            <div class="solution-grid">
+                <div class="solution-block">
+                    <h3>El problema</h3>
+                    <ul>
+                        <li>Clientes llaman fuera de horario y se van a la competencia</li>
+                        <li>Idas y vueltas por WhatsApp para coordinar un horario</li>
+                        <li>No-shows del 25-30% sin recordatorios ni seña</li>
+                        <li>Vos o tu secretaria respondiendo turnos en vez de atender</li>
+                    </ul>
+                    <p class="industry-stat">El 40% de las reservas en servicios profesionales se hacen fuera del horario de atención. <em>Fuente: Square / Booksy.</em></p>
+                </div>
+                <div class="solution-block">
+                    <h3>Cómo lo resuelvo</h3>
+                    <ul>
+                        <li>Bot que pregunta servicio + lee disponibilidad real</li>
+                        <li>Reserva, confirma y manda recordatorio 24h y 2h antes</li>
+                        <li>Reprograma o cancela sin intervención humana</li>
+                        <li>Cobra seña opcional (Mercado Pago / Stripe)</li>
+                        <li>Sincroniza con Google Calendar / Cal.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="demo-box">
+                <span class="demo-label">PROBALO AHORA</span>
+                <p style="font-size: 0.9rem; color: var(--text2); margin-bottom: 1rem;">
+                    Este es <strong>mi propio sistema de agenda</strong>, conectado en vivo. Reservá una consulta de 30 min como lo haría un cliente tuyo:
+                </p>
+                <div id="cal-embed-turnos"></div>
+            </div>
+            <div class="expected-results">
+                <div class="er-item"><div class="er-metric">40%</div><div class="er-label">Reservas fuera de horario recuperadas</div></div>
+                <div class="er-item"><div class="er-metric">25% → 8%</div><div class="er-label">No-shows con seña + recordatorio</div></div>
+                <div class="er-item"><div class="er-metric">0 idas</div><div class="er-label">Y vueltas por WhatsApp</div></div>
+                <div class="er-item"><div class="er-metric">1-2 sem</div><div class="er-label">Implementación</div></div>
+                <div class="er-note">* Rangos esperables. La reducción de no-shows depende de si activamos el cobro de seña.</div>
+            </div>
+            <div class="solution-stack">
+                <span class="stack-label">Stack</span>
+                <span class="tag">Cal.com / Google Calendar</span>
+                <span class="tag">WhatsApp Cloud API</span>
+                <span class="tag">n8n</span>
+                <span class="tag">Mercado Pago / Stripe</span>
+                <span class="tag">OpenAI</span>
+            </div>
+        </article>
+
+        <article class="solution-card" id="extraccion-facturas">
+            <div class="solution-number">Solución 03</div>
+            <h2 class="solution-title">Extracción automática de datos de facturas y documentos</h2>
+            <div class="solution-tags">
+                <span class="tag">Back-office</span>
+                <span class="tag">Contadores · Comercios</span>
+                <span class="tag">Cualquier negocio con facturas</span>
+            </div>
+            <div class="solution-grid">
+                <div class="solution-block">
+                    <h3>El problema</h3>
+                    <ul>
+                        <li>Alguien carga manualmente datos de facturas a Excel o ERP</li>
+                        <li>15-20 hs semanales perdidas en data entry</li>
+                        <li>10-15% de errores típicos en carga manual</li>
+                        <li>Información lenta = decisiones tarde</li>
+                    </ul>
+                    <p class="industry-stat">La carga manual de facturas cuesta entre US$12 y US$30 por documento. Automatizada baja a menos de US$2. <em>Fuente: APQC / Levvel Research.</em></p>
+                </div>
+                <div class="solution-block">
+                    <h3>Cómo lo resuelvo</h3>
+                    <ul>
+                        <li>IA que lee PDFs, imágenes y emails de facturas</li>
+                        <li>Extrae proveedor, CUIT, items, importes, IVA</li>
+                        <li>Valida contra tus reglas (proveedores conocidos, montos)</li>
+                        <li>Carga al ERP / Sheets / sistema contable</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="demo-box">
+                <span class="demo-label">PROBALO AHORA</span>
+                <p style="font-size: 0.9rem; color: var(--text2); margin-bottom: 1rem;">
+                    Elegí una factura de ejemplo y mirá cómo la IA extrae los datos en segundos. <strong>Demo reproducible</strong> — el output es del mismo formato que produce el sistema productivo sobre tu PDF real.
+                </p>
+
+                <div id="invoice-demo" class="inv-demo">
+                    <div class="inv-demo-controls">
+                        <button class="inv-demo-btn" data-sample="a">▶ Procesar Factura A (Proveedor)</button>
+                        <button class="inv-demo-btn" data-sample="b">▶ Procesar Factura B (Servicio)</button>
+                    </div>
+
+                    <div class="inv-demo-stage">
+                        <div>
+                            <div class="inv-demo-doc-label">📄 Input · PDF de factura</div>
+                            <div class="inv-demo-doc">
+                                <div class="inv-demo-placeholder">
+                                    <div class="inv-placeholder-icon">📄</div>
+                                    <p>Hacé click en una factura arriba<br>para empezar la extracción</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="inv-demo-output">
+                            <div class="inv-demo-doc-label">⚡ Output · JSON estructurado</div>
+                            <div class="inv-demo-steps"></div>
+                            <pre class="inv-demo-json"><code></code></pre>
+                            <div class="inv-demo-metrics"></div>
+                        </div>
+                    </div>
+
+                    <div class="inv-demo-footer">
+                        <button class="inv-demo-replay">↻ Repetir</button>
+                        <a class="demo-btn" href="https://wa.me/1155270357?text=Hola%2C%20vi%20la%20demo%20de%20extracci%C3%B3n%20de%20facturas%20y%20quiero%20una%20versi%C3%B3n%20para%20mi%20negocio" target="_blank" rel="noopener">💬 Quiero esto en mi negocio</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="expected-results">
+                <div class="er-item"><div class="er-metric">95%+</div><div class="er-label">Reducción de tiempo</div></div>
+                <div class="er-item"><div class="er-metric">&lt;1%</div><div class="er-label">Tasa de error</div></div>
+                <div class="er-item"><div class="er-metric">15-20h</div><div class="er-label">Recuperadas/semana</div></div>
+                <div class="er-item"><div class="er-metric">3-4 sem</div><div class="er-label">Implementación</div></div>
+                <div class="er-note">* Rangos esperables según volumen y calidad de documentos.</div>
+            </div>
+
+            <div class="solution-stack">
+                <span class="stack-label">Stack</span>
+                <span class="tag">OpenAI Vision / Claude</span>
+                <span class="tag">Python</span>
+                <span class="tag">n8n</span>
+                <span class="tag">Google Sheets / ERP API</span>
+            </div>
+        </article>
     </div>
 </section>
 
-<!-- CTA Banner -->
 <section class="cta-banner">
     <div class="container">
         <img src="img/erick/erick-profile-md.webp" alt="Erick Navarro" width="80" height="80" loading="lazy" style="border-radius:50%;border:2px solid #ff4d00;margin-bottom:1rem;box-shadow:0 0 20px rgba(255,77,0,0.1);">
-        <h2 class="heading heading-md">¿Cuál es tu siguiente caso de éxito?</h2>
-        <p class="subtext">
-            Contacta para una consulta gratuita. Te diré exactamente cómo puedo ayudarte y qué te ahorrarías.
-        </p>
-        <a href="contacto.html" class="btn btn-fill">Iniciar consulta →</a>
+        <h2 class="heading heading-md">¿Cuál de las tres aplica a tu negocio?</h2>
+        <p class="subtext">En 30 minutos te digo cuál te conviene, qué te ahorraría y cuánto costaría. Sin compromiso.</p>
+        <a href="contacto.html" class="btn btn-fill">Agendar los 30 min →</a>
         <div class="contact-row-cta">
             <a href="mailto:ericknavarroia@gmail.com" class="contact-prominent contact-prominent-lg">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
@@ -356,14 +281,13 @@
     </div>
 </section>
 
-<!-- Footer -->
 <footer class="footer">
     <div class="container">
         <div class="footer-inner">
             <div class="footer-copy">© 2026 Erick Navarro · IA & Consulting</div>
             <ul class="footer-links">
                 <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="casos.html">Proceso</a></li>
+                <li><a href="casos.html">Soluciones</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="privacidad.html">Privacidad</a></li>
                 <li><a href="https://www.linkedin.com/in/erickdavidnavarro" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -372,4 +296,23 @@
     </div>
 </footer>
 
-<!-- WhatsA
+<a href="https://wa.me/1155270357?text=Hola%20Erick%2C%20me%20interesa%20una%20consulta%20sobre%20automatizaci%C3%B3n" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.319 0-4.476-.678-6.306-1.834l-.452-.292-2.965.994.994-2.965-.292-.452A9.935 9.935 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+
+<script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", { origin: "https://cal.com" });
+    Cal("inline", { elementOrSelector: "#cal-embed-turnos", calLink: "erick-david-navarro-linares-wp8mtq", layout: "month_view", config: { theme: "dark" } });
+    Cal("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
+</script>
+
+<script src="js/page-effects.js" defer></script>
+<script src="js/invoice-demo.js" defer></script>
+<script src="js/chatbot.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/analytics.js" defer></script>
+
+</body>
+</html>

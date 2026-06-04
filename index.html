@@ -78,7 +78,7 @@
     </a>
     <ul class="nav-links" id="navLinks">
         <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="casos.html">Resultados</a></li>
+        <li><a href="casos.html">Soluciones</a></li>
         <li><a href="sobre-mi.html">Sobre mí</a></li>
         <li><a href="contacto.html" class="nav-cta magnetic-btn">Hablemos</a></li>
     </ul>
@@ -294,23 +294,153 @@
     </div>
 </section>
 
-<!-- ═══ CTA INTERMEDIO ═══ -->
-<section class="cta-mid">
+<!-- ═══ SOLUCIONES PREVIEW ═══ -->
+<section class="soluciones-preview" id="soluciones">
     <div class="container">
-        <div class="cta-mid-inner">
-            <div>
-                <h3>¿Sabías que el data entry manual puede reducirse hasta un 95%?</h3>
-                <p>En un caso típico, un equipo pasó de 40 horas semanales a 2. ¿Querés ver si aplica a tu negocio?</p>
-            </div>
-            <div class="cta-mid-actions">
-                <a href="casos.html" class="btn btn-outline magnetic-btn">Ver ejemplo</a>
-                <a href="contacto.html" class="btn btn-fill magnetic-btn">
-                    Evaluar mi caso <span class="btn-arrow">→</span>
-                </a>
-            </div>
+        <div class="label">3 soluciones que podés probar en vivo</div>
+        <h2 class="heading">No te las cuento.<br><span class="accent-word">Te las muestro.</span></h2>
+        <p class="subtext">
+            Cada solución que ofrezco la podés probar antes de contratarme. Sin maquetas, sin promesas — el sistema funcionando en vivo.
+        </p>
+
+        <div class="sol-grid">
+            <a href="casos.html#chatbot-leads" class="sol-card">
+                <div class="sol-num">01</div>
+                <div class="sol-icon">💬</div>
+                <h3>Chatbot 24/7 que captura leads</h3>
+                <p>Atiende WhatsApp + web mientras dormís. Califica, responde y deriva al CRM.</p>
+                <div class="sol-meta">
+                    <span class="sol-tag">PyMEs · Servicios</span>
+                    <span class="sol-cta">Probarlo →</span>
+                </div>
+            </a>
+
+            <a href="casos.html#agenda-turnos" class="sol-card">
+                <div class="sol-num">02</div>
+                <div class="sol-icon">📅</div>
+                <h3>Agenda de turnos 24/7</h3>
+                <p>Reserva, confirma, recordatorio + seña. Reduce no-shows del 25% al 8%.</p>
+                <div class="sol-meta">
+                    <span class="sol-tag">Profesionales · Locales</span>
+                    <span class="sol-cta">Reservar demo →</span>
+                </div>
+            </a>
+
+            <a href="casos.html#extraccion-facturas" class="sol-card">
+                <div class="sol-num">03</div>
+                <div class="sol-icon">📄</div>
+                <h3>Extracción de facturas</h3>
+                <p>IA que lee PDFs, extrae datos y los carga al ERP/Sheets. De 8 min a 12 seg por factura.</p>
+                <div class="sol-meta">
+                    <span class="sol-tag">Back-office · Contadores</span>
+                    <span class="sol-cta">Ver ejemplo →</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="services-cta">
+            <a href="casos.html" class="btn btn-outline magnetic-btn">Ver las 3 con demos vivas</a>
+            <a href="contacto.html" class="btn btn-fill magnetic-btn">
+                Cuál aplica a mi negocio <span class="btn-arrow">→</span>
+            </a>
         </div>
     </div>
 </section>
+
+<style>
+.soluciones-preview {
+    padding: 6rem 0;
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+.soluciones-preview .label,
+.soluciones-preview .heading,
+.soluciones-preview .subtext { text-align: center; }
+.soluciones-preview .label { justify-content: center; display: flex; }
+.soluciones-preview .subtext { max-width: 640px; margin: 1rem auto 3rem; }
+.sol-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+.sol-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 2rem 1.75rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.sol-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    height: 3px;
+    width: 0;
+    background: var(--accent);
+    transition: width 0.4s ease;
+}
+.sol-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 12px 32px rgba(255,77,0,0.08);
+}
+.sol-card:hover::before { width: 100%; }
+.sol-num {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    margin-bottom: 0.5rem;
+}
+.sol-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.sol-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+}
+.sol-card p {
+    font-size: 0.88rem;
+    color: var(--text2);
+    line-height: 1.55;
+    flex-grow: 1;
+    margin-bottom: 1.25rem;
+}
+.sol-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+.sol-tag {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+.sol-cta {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 700;
+}
+@media (max-width: 900px) {
+    .sol-grid { grid-template-columns: 1fr; }
+    .soluciones-preview { padding: 4rem 0; }
+}
+</style>
 
 <!-- ═══ TESTIMONIOS REALES ═══ -->
 <section class="testimonials" id="testimonios">
@@ -356,7 +486,7 @@
                     </div>
                 </div>
                 <p class="test-quote" style="font-size:0.95rem;color:var(--text2);line-height:1.7;font-style:italic;">
-                    "[QUOTE DE HENRY — PASAME EL TEXTO]"
+                    "Muy agradecido con el trabajo de Erick, altamente recomendado por su excelencia y capacidad de innovación. Siempre da mucho más de lo que ofrece, muy satisfecho y espero seguir contando con él para proyectos futuros."
                 </p>
                 <img src="img/testimonios/logo-recursos-cristianos.png"
                      alt="Logo Recursos Cristianos Argentina"
@@ -512,7 +642,7 @@
             <div class="footer-copy">© 2026 Erick Navarro · IA & Consulting</div>
             <ul class="footer-links">
                 <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="casos.html">Proceso</a></li>
+                <li><a href="casos.html">Soluciones</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="privacidad.html">Privacidad</a></li>
                 <li><a href="https://www.linkedin.com/in/erickdavidnavarro" target="_blank" rel="noopener">LinkedIn</a></li>

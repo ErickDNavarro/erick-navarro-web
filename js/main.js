@@ -177,23 +177,33 @@
         })();
     });
 
-    // ─── PAGE HERO ANIMATION ───
+    // ─── PAGE HERO ENTRANCE (above-the-fold, no scroll trigger) ───
     const pageHero = document.querySelector('.page-hero');
     if (pageHero) {
+        const heroHeadings = pageHero.querySelectorAll('.heading');
+        const heroSubtext = pageHero.querySelector('.subtext');
         const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
-        tl.to('.page-hero .line-inner', { y: 0, duration: 1.2, stagger: 0.12, delay: 0.2 })
-          .to('.page-hero .hero-desc', { opacity: 1, y: 0, duration: 0.8 }, '-=0.5')
-          .to('.page-hero .hero-actions', { opacity: 1, y: 0, duration: 0.8 }, '-=0.4');
+        if (heroHeadings.length) tl.from(heroHeadings, { opacity: 0, y: 30, duration: 0.9, stagger: 0.1 }, 0.1);
+        if (heroSubtext) tl.from(heroSubtext, { opacity: 0, y: 20, duration: 0.8 }, '-=0.5');
+        // Compat con index.html legacy (sólo si los elementos existen)
+        if (pageHero.querySelector('.line-inner')) {
+            tl.to('.page-hero .line-inner', { y: 0, duration: 1.2, stagger: 0.12 }, 0)
+              .to('.page-hero .hero-desc', { opacity: 1, y: 0, duration: 0.8 }, '-=0.5')
+              .to('.page-hero .hero-actions', { opacity: 1, y: 0, duration: 0.8 }, '-=0.4');
+        }
     }
 
-    // ─── SCROLL REVEAL for labels/headings/subtext ───
+    // ─── SCROLL REVEAL for labels/headings/subtext (skip page-hero, ya animado) ───
     gsap.utils.toArray('.label').forEach(el => {
+        if (el.closest('.page-hero')) return;
         gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 85%' }, opacity: 0, x: -30, duration: 0.6, ease: 'power3.out' });
     });
     gsap.utils.toArray('.heading').forEach(el => {
+        if (el.closest('.page-hero')) return;
         gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 85%' }, opacity: 0, y: 30, duration: 0.8, ease: 'power3.out' });
     });
     gsap.utils.toArray('.subtext').forEach(el => {
+        if (el.closest('.page-hero')) return;
         gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 85%' }, opacity: 0, y: 20, duration: 0.8, delay: 0.1, ease: 'power3.out' });
     });
 

@@ -620,3 +620,156 @@
 /* Testimonios */
 .test-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
 @media (max-width: 768px) { .test-grid { grid-template-columns: 1fr; } }
+
+/* ═══════════════════════════════════════════════════════════════
+   GLOBAL ELEMENTS — usados por TODAS las páginas (canvas, scroll,
+   page-hero, headings, CTA banner, WhatsApp float, etc.)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Particle canvas: si no es fixed, ocupa viewport en flujo y empuja todo */
+#particleCanvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.scroll-progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    z-index: 10002;
+    width: 0%;
+    transition: width 0.05s linear;
+}
+
+.page-hero {
+    min-height: 70vh;
+    padding: 8rem 0 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+.page-hero .container {
+    position: relative;
+    z-index: 2;
+    max-width: 880px;
+}
+.page-hero .subtext {
+    max-width: 640px;
+    margin: 1.25rem auto 0;
+    text-align: center;
+    font-size: 1.05rem;
+}
+
+.heading-xl { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; }
+.heading-lg { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
+.heading-md { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; line-height: 1.2; }
+.heading-sm { font-size: 1.15rem; font-weight: 700; line-height: 1.3; }
+
+.accent-word {
+    color: var(--accent);
+    position: relative;
+}
+
+/* CTA Banner final (usado por casos, contacto, etc.) */
+.cta-banner {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, rgba(255,77,0,0.08), rgba(255,77,0,0.02));
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+}
+.cta-banner .container { max-width: 720px; }
+.cta-banner .heading { margin-bottom: 1rem; }
+.cta-banner .subtext {
+    max-width: 540px;
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+.cta-banner .btn-fill { margin-bottom: 2rem; }
+
+/* Contacto prominente (email/teléfono destacados) */
+.contact-prominent {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid transparent;
+    transition: color 0.25s, border-color 0.25s;
+}
+.contact-prominent svg { color: var(--accent); flex-shrink: 0; }
+.contact-prominent:hover {
+    color: #ffffff;
+    border-bottom-color: var(--accent);
+}
+.contact-prominent-lg { font-size: 1.02rem; font-weight: 600; }
+.contact-row-cta {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+/* WhatsApp burbujita flotante */
+.wa-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 56px;
+    height: 56px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9998;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.wa-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(37,211,102,0.6);
+}
+.wa-float svg {
+    width: 28px;
+    height: 28px;
+    fill: #fff;
+}
+
+/* Tag base (chip pequeño) */
+.tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.7rem;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--text2);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .cta-banner { padding: 3.5rem 0; }
+    .contact-row-cta { gap: 1.25rem; margin-top: 1.5rem; padding-top: 1.5rem; }
+    .wa-float { width: 50px; height: 50px; bottom: 1rem; right: 1rem; }
+    .wa-float svg { width: 24px; height: 24px; }
+}
